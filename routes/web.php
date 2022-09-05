@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataDiriController;
 use App\Http\Controllers\TeamsController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,3 +29,9 @@ Route::get('/Teams' , [TeamsController::class , 'index'])->name('TeamsIndex');
 Route::get('/CreateTeams' , [TeamsController::class , 'create'])->name('TeamsCreate');
 Route::post('/StoreTeams' , [TeamsController::class , 'store'])->name('TeamsStore');
 Route::get('/DeleteTeams/{id}' , [TeamsController::class , 'destroy'])->name('TeamsDelete');
+
+Route::get('/DataDiris' , [DataDiriController::class , 'index'])->name('DataDiriIndex');
+Route::get('/CreateDataDiri' , [DataDiriController::class , 'create'])->name('DataDiriCreate');
+Route::post('/StoreDataDiri' , [DataDiriController::class , 'store'])->name('DataDiriStore');
+Route::get('/DeleteDataDiri/{id}' , [DataDiriController::class , 'destroy'])->name('DataDiriDelete');
+Route::get('/DownloadDataDiri/{id}' , [DataDiriController::class , 'download'])->name('DataDiriDownload');
