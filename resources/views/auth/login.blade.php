@@ -2,70 +2,109 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title>Login</title>
-	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/modules/fontawesome/css/all.min.css">
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="assets/modules/bootstrap-social/bootstrap-social.css">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <!-- Start GA -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-94034622-3');
+    </script>
+    <!-- /END GA -->
 </head>
 
 <body>
-    <section class="h-100">
-        <div class="container h-100">
-            <div class="row justify-content-sm-center h-100">
-                <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
-                    <div class="text-center my-5">
-                        <img src="{{ asset('img/logo.png') }}" alt="logo" width="150">
-                    </div>
-                    <div class="card shadow-lg">
-                        <div class="card-body p-5">
-                            <h1 class="fs-4 card-title fw-bold mb-4">Login</h1>
-                            <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="" autocomplete="off">
-                                @csrf
-                                <div class="mb-3">
-                                    <label class="mb-2 text-muted" for="email">E-Mail Address</label>
-                                    <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
-                                    <div class="invalid-feedback">
-                                        Email is invalid
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="mb-2 w-100">
-                                        <label class="text-muted" for="password">Password</label>
-
-                                    </div>
-                                    <input id="password" type="password" class="form-control" name="password" required>
-                                    <div class="invalid-feedback">
-                                        Password is required
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <button type="submit" class="btn btn-primary">
-                                        Login
-                                    </button>
-                                    <a href="{{ route('password.request') }}" class="float-end ms-auto">
-                                        Forgot Password?
-                                    </a>
-                                </div>
-                            </form>
+    <div id="app">
+        <section class="section">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+                        <div class="login-brand">
+                            <!-- <img src="assets/img/stisla-fill.svg" alt="logo" width="100" class="shadow-light rounded-circle"> -->
                         </div>
-                        <div class="card-footer py-3 border-0">
-                            <div class="text-center">
-                                Don't have an account? <a href="{{ route('register') }}" class="text-dark">Create One</a>
+
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h4>Login</h4>
+                            </div>
+
+                            <div class="card-body">
+                                <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="" autocomplete="off">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
+                                        <div class="invalid-feedback">
+                                            Please fill in your email
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="d-block">
+                                            <label for="password" class="control-label">Password</label>
+                                            <div class="float-right">
+                                                <a href="auth-forgot-password.html" class="text-small">
+                                                    Forgot Password?
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
+                                        <div class="invalid-feedback">
+                                            please fill in your password
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                                            Login
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                    </div>
-                    <div class="text-center mt-5 mb-3 text-white">
-                        TechComfest 2023
+                        <div class="mt-5 text-muted text-center">
+                            Don't have an account? <a href="auth-register.html">Create One</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <script src="{{ asset('js/validation.js') }}"></script>
+    <!-- General JS Scripts -->
+    <script src="assets/modules/jquery.min.js"></script>
+    <script src="assets/modules/popper.js"></script>
+    <script src="assets/modules/tooltip.js"></script>
+    <script src="assets/modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="assets/modules/moment.min.js"></script>
+    <script src="assets/js/stisla.js"></script>
+
+    <!-- JS Libraies -->
+
+    <!-- Page Specific JS File -->
+
+    <!-- Template JS File -->
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/custom.js"></script>
 </body>
 
 </html>

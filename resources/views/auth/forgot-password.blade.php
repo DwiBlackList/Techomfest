@@ -2,58 +2,89 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="This is a login page template based on Bootstrap 5">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title>Forgot Password</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/modules/fontawesome/css/all.min.css">
+
+    <!-- CSS Libraries -->
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <!-- Start GA -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-94034622-3');
+    </script>
+    <!-- /END GA -->
 </head>
 
 <body>
-    <section class="h-100">
-        <div class="container h-100">
-            <div class="row justify-content-sm-center h-100">
-                <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
-                    <div class="text-center my-5">
-                        <img src="{{ asset('img/logo.png') }}" alt="logo" width="150">
-                    </div>
-                    <div class="card shadow-lg">
-                        <div class="card-body p-5">
-                            <h1 class="fs-4 card-title fw-bold mb-4">Forgot Password</h1>
-                            <form method="POST" action="{{ route('password.email') }}" class="needs-validation" novalidate="" autocomplete="off">
-                                @csrf
-
-                                <div class="mb-3">
-                                    <label class="mb-2 text-muted" for="email">E-Mail Address</label>
-                                    <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
-                                    <div class="invalid-feedback">
-                                        Email is invalid
-                                    </div>
-                                </div>
-
-                                <div class="d-flex align-items-center">
-                                    <button type="submit" class="btn btn-primary ms-auto">
-                                        Send Link
-                                    </button>
-                                </div>
-                            </form>
+    <div id="app">
+        <section class="section">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+                        <div class="login-brand">
+                            <!-- <img src="assets/img/stisla-fill.svg" alt="logo" width="100" class="shadow-light rounded-circle"> -->
                         </div>
-                        <div class="card-footer py-3 border-0">
-                            <div class="text-center">
-                                <a href="{{ route('login') }}" class="text-dark">Back</a>
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h4>Forgot Password</h4>
+                            </div>
+                            <div class="card-body">
+                                <p class="text-muted">We will send a link to reset your password</p>
+                                <form method="POST" action="{{ route('password.email') }}">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                                            Forgot Password
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                    </div>
-                    <div class="text-center mt-5 mb-3 text-white">
-                        TechComfest 2023
+                        <div class="simple-footer">
+                            Techcomfest 2023
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <script src="{{ asset('js/validation.js') }}"></script>
+    <!-- General JS Scripts -->
+    <script src="assets/modules/jquery.min.js"></script>
+    <script src="assets/modules/popper.js"></script>
+    <script src="assets/modules/tooltip.js"></script>
+    <script src="assets/modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="assets/modules/moment.min.js"></script>
+    <script src="assets/js/stisla.js"></script>
+
+    <!-- JS Libraies -->
+
+    <!-- Page Specific JS File -->
+
+    <!-- Template JS File -->
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/custom.js"></script>
 </body>
 
 </html>

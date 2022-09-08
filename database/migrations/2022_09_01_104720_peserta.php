@@ -17,6 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('idteam');
             $table->string('namapeserta');
+            $table->string('namapembina');
+            $table->string('asalsekolah');
+            $table->string('nik');
+            $table->string('email');
+            $table->string('tanggallahir');
             $table->rememberToken();
             $table->timestamps();
         });

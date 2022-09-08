@@ -1,77 +1,70 @@
-<title>Tambah Team</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <x-app-layout>
-    <section class="h-100">
-        <div class="container h-100">
-            <div class="row justify-content-sm-center h-100">
-                <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
-                    <div class="text-center my-5">
-                        <img src="{{ asset('img/logo.png') }}" alt="logo" width="150">
-                    </div>
-                    <div class="card shadow-lg">
-                        <div class="card-body p-5">
-                            <h1 class="fs-4 card-title fw-bold mb-4">Team</h1>
-                            <form method="POST" class="needs-validation" novalidate="" autocomplete="off" action="{{ route('TeamsStore') }}">
-
-                                @csrf
-
-                                <div class="mb-3">
-                                    <label class="mb-2 text-muted" for="name">Nama Team</label>
-                                    <input id="namateam" type="text" class="form-control" name="namateam" value="" required autofocus>
-                                    <div class="invalid-feedback">
-                                        Nama Team is required
-                                    </div>
+@extends('layouts.app')
+@section('content')
+<section class="section">
+    <div class="section-header">
+        <h1>Dashboard</h1>
+    </div>
+    <div class="section-body">
+        <h2 class="section-title">Pendaftaran Team</h2>
+        <!-- <p class="section-lead">Silakan daftarkan team anda melalui tombol di bawah ini.</p> -->
+        <form method="POST" class="needs-validation" novalidate="" autocomplete="off" action="{{ route('TeamsStore') }}">
+            @csrf
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-12 col-md-6 col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Team Name</label>x
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Peserta 1</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>NIK Peserta 1</label>
+                                    <input type="text" name="nikpeserta1" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Peserta 2</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>NIK Peserta 2</label>
+                                    <input type="text" name="nikpeserta2" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Peserta 3</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>NIK Peserta 3</label>
+                                    <input type="text" name="nikpeserta3" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Companion</label>
+                                    <input type="text" name="dosen" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>School</label>
+                                    <input type="text" name="sekolah" class="form-control">
                                 </div>
 
-                                <div class="mb-3">
-                                    <label class="mb-2 text-muted" for="name">Peserta 1</label>
-                                    <input id="peserta1" type="text" class="form-control" name="peserta1" value="" required autofocus>
-                                    <div class="invalid-feedback">
-                                        Peserta 1 is required
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="mb-2 text-muted" for="name">Peserta 2</label>
-                                    <input id="peserta2" type="text" class="form-control" name="peserta2" value="" required autofocus>
-                                    <div class="invalid-feedback">
-                                        Peserta 2 is required
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="mb-2 text-muted" for="name">Peserta 3</label>
-                                    <input id="peserta3" type="text" class="form-control" name="peserta3" value="" required autofocus>
-                                    <div class="invalid-feedback">
-                                        Peserta 3 is required
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="mb-2 text-muted" for="kategori">Kategori Lomba</label>
-                                    <select id="kategori" class="form-control" name="kategori" value="" required autofocus>
-                                        <option>Software</option>
+                                <div class="form-group">
+                                    <label>Category</label>
+                                    <select class="form-control" name="kategori">
                                         <option>Multimedia</option>
                                         <option>Network</option>
+                                        <option>Software</option>
                                     </select>
-                                    <div class="invalid-feedback">
-                                        Kategori Lomba is required
-                                    </div>
                                 </div>
-
-                                <div class="align-items-center d-flex">
-                                    <button type="submit" class="btn btn-primary ms-auto">
-                                        Simpan
-                                    </button>
-                                </div>
-                            </form>
+                            </div>
                         </div>
-                    </div>
-                    <div class="text-center mt-5 mb-3 text-white">
-                        TechComfest 2023
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</x-app-layout>
+        </form>
+    </div>
+</section>
+@endsection

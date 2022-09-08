@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('nohp');
             $table->enum('jeniskelamin' , ['Laki-laki' , 'Perempuan']);
             $table->enum('kategori' , ['Multimedia' , 'Software' , 'Network' , 'NULL'])->default('NULL');
-            $table->enum('role' , ['Admin' , 'Independen' , 'Peserta'])->default('Peserta');
+            $table->enum('role' , ['Admin' , 'IndependenM' , 'IndependenS' , 'IndependenN' , 'Peserta'])->default('Peserta');
             $table->rememberToken();
             $table->timestamps();
         });
