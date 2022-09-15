@@ -70,17 +70,31 @@ class TeamsController extends Controller
 
         $peserta1 = new Peserta;
         $peserta1->namapeserta = $request->peserta1;
+        $peserta1->namapembina = $request->dosen;
+        $peserta1->asalsekolah = $request->sekolah;
+        $peserta1->nik = $request->nikpeserta1;
+        $peserta1->email = $request->email1;
+        $peserta1->tanggallahir = $request->tgllahir1;
         $peserta1->idteam = $teamid;
         $peserta1->save();
 
-
         $peserta2 = new Peserta;
         $peserta2->namapeserta = $request->peserta2;
+        $peserta2->namapembina = $request->dosen;
+        $peserta2->asalsekolah = $request->sekolah;
+        $peserta2->nik = $request->nikpeserta2;
+        $peserta2->email = $request->email2;
+        $peserta2->tanggallahir = $request->tgllahir2;
         $peserta2->idteam = $teamid;
         $peserta2->save();
 
         $peserta3 = new Peserta;
         $peserta3->namapeserta = $request->peserta3;
+        $peserta3->namapembina = $request->dosen;
+        $peserta3->asalsekolah = $request->sekolah;
+        $peserta3->nik = $request->nikpeserta3;
+        $peserta3->email = $request->email3;
+        $peserta3->tanggallahir = $request->tgllahir3;
         $peserta3->idteam = $teamid;
         $peserta3->save();
 

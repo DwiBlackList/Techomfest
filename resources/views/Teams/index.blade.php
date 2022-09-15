@@ -1,17 +1,5 @@
 @extends('layouts.app')
 @section('content')
-@if(!empty($teams))
-                    {{ $teams->namateam }}
-                    {{ Auth::user()->kategori }}
-                    @foreach($peserta as $x)
-                    {{ $x->namapeserta }}
-                    @endforeach
-
-                    <a href="{{ route('TeamsDelete' , $teams->id) }}">{{ $teams->id }}</a>
-
-                    @else
-                    <h1>Belum buat team</h1>
-                    @endif        
 <section class="section">
     <div class="section-header">
         <h1>Team</h1>
@@ -24,7 +12,7 @@
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">No</th>
+                            <th scope="col">Nama</th>
                             <th scope="col">Team Name</th>
                             <th scope="col">Companion</th>
                             <th scope="col">School</th>
@@ -33,14 +21,25 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @if(!empty($teams))
+                        Team Found. <a href="{{ route('TeamsDelete' , $teams->id) }}">Delete Team</a>
+                        @foreach($peserta as $x)
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Entahlah</td>
-                            <td>Kuwat Santoso</td>
-                            <td>SMK Palapa</td>
-                            <td>Software</td>
-                            <td><div class="badge badge-success">Completed</div></td>
+                            <th>{{ $x->namapeserta }}</th>
+                            <td>{{ $teams->namateam }}</td>
+                            <td>{{ $x->namapembina }}</td>
+                            <td>{{ $x->asalsekolah }}</td>
+                            <td>{{ Auth::user()->kategori }}</td>
+                            <td>
+                                <div class="badge badge-success">Completed</div>
+                            </td>
+                            @endforeach
+                            @else
+                            <td colspan="6" align="center">
+                                <h1>Belum buat team</h1> <a href="{{ Route('TeamsCreate') }}">Tambah Team</a>
+                            </td>
                         </tr>
+                        @endif
                     </tbody>
                 </table>
             </div>

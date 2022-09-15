@@ -28,6 +28,7 @@
                             <div class="fallback">
                                 <input name="file" type="file" multiple />
                             </div>
+                            <input type="submit">
                         </form>
                     </div>
                 </div>

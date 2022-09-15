@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('userid');
             $table->enum('status' , ['Not Verified' , 'Verified' , 'Denied'])->default('Not Verified');
             $table->string('lokasi');
+            $table->string('keterangan')->default('Menunggu Untuk Direview');
             $table->timestamps();
         });
     }

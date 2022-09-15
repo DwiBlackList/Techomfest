@@ -20,10 +20,8 @@ class DataDiriController extends Controller
      */
     public function index()
     {
-        $datadirisendiri = DataDiri::where('userid' , Auth::user()->id)->first();
+        $datadirisendiri = DataDiri::where('userid' , Auth::user()->id)->get();
 
-        // $datadirisoftware =  ;
-        
         return view('datadiri.index' , compact('datadirisendiri'));
     }
 

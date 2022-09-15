@@ -1506,7 +1506,8 @@ h6 .badge {
   right: 5px;
   position: absolute;
   z-index: 890;
-  background-color: transparent; }
+  background-color: #6777ef;
+}
   .navbar.active {
     background-color: #6777ef;
     box-shadow: rgba(103, 119, 239, 0.2) rgba(0, 0, 0, 0.03); }
