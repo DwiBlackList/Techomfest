@@ -12,7 +12,7 @@
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="dropdown-item has-icon text-danger">
+                    <a :href="route('logout')" style="cursor: pointer;" onclick="event.preventDefault(); this.closest('form').submit();" class="dropdown-item has-icon text-danger">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
                 </div>

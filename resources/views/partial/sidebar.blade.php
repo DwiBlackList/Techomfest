@@ -23,9 +23,15 @@
 
             <li> <a href="" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Submission</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="{{url('software')}}">Software</a></li>
-                    <li><a class="nav-link" href="{{url('multimedia')}}">Multimedia</a></li>
-                    <li><a class="nav-link" href="{{url('network')}}">Network</a></li>
+                    @if(Auth::user()->kategori == 'Software')
+                    <li><a class="nav-link" href="{{ Route('SSoftware')}}">Software</a></li>
+                    @elseif(Auth::user()->kategori == 'Multimedia')
+                    <li><a class="nav-link" href="{{ Route('SMulmed')}}">Multimedia</a></li>
+                    @elseif(Auth::user()->kategori == 'Network')
+                    <li><a class="nav-link" href="{{ url('network')}}">Network</a></li>
+                    @else
+                    <li><a class="nav-link" href="#">Unavailable</a></li>
+                    @endif
                 </ul>
             </li>
         </ul>

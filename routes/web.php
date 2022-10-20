@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DataDiriController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SubsmissionController;
 use App\Http\Controllers\TeamsController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,3 +35,10 @@ Route::get('/CreateDataDiri' , [DataDiriController::class , 'create'])->name('Da
 Route::post('/StoreDataDiri' , [DataDiriController::class , 'store'])->name('DataDiriStore');
 Route::get('/DeleteDataDiri/{id}' , [DataDiriController::class , 'destroy'])->name('DataDiriDelete');
 Route::get('/DownloadDataDiri/{id}' , [DataDiriController::class , 'download'])->name('DataDiriDownload');
+
+Route::get('/SMulmed' , [SubsmissionController::class , 'indexmulmed'])->name('SMulmed');
+Route::post('/SSMulmed' , [SubsmissionController::class , 'storemulmed'])->name('SSMulmed');
+
+
+Route::get('/SSoftware' , [SubsmissionController::class , 'indexsoftware'])->name('SSoftware');
+Route::post('/SSSoftware' , [SubsmissionController::class , 'storesoftware'])->name('SSSoftware');
